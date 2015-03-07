@@ -16,8 +16,13 @@ public class Ejercicios {
 	{
 		// is el valor de b no es igual a 0 entonces divide a entre b
 		// si no retorna el valor de 0
-		if(b!=0) return (a/b);
-		else return 0;
+		try
+		{
+		return (a/b);
+		}catch(Exception e)
+		{
+			return 0;
+		}
 	}
 	
 	//Devuelve el valor almacenado en 'arreglo' en la posicion 'pos'
@@ -26,16 +31,29 @@ public class Ejercicios {
 	{
 		// Si la posicion es menor a la longitud del arreglo y mayor a 0
 		// entonces devuelve la posicion en el arreglo
-		if(pos<=arreglo.length && pos>0) return arreglo[pos];
-		else return 0;
+		try
+		{
+		return arreglo[pos];
+		}
+		catch(Exception e)
+		{
+			return 0;
+		}
 	}
 	
 	//Devuelve la variable 'x' de 'mi_clase'
 	//Se debe manejar las excepciones en caso que 'mi_clase' sea igual a null
-	static MiClase getX(MiClase mi_clase)
+	static int getX(MiClase mi_clase)
 	{
 		
-		return -1;
+		try
+		{
+			return mi_clase.x;
+		}
+		catch(NullPointerException e)
+		{
+		return 0;
+		}
 	}
 	
 	//Devuelve el promedio de todos los elementos de 'mi_lista'
@@ -48,7 +66,7 @@ public class Ejercicios {
 				{
 			cant = numero+cant;
 				}
-		// Divide la cantidad de notas, por el tamaño actual del arreglo mi_lista
+		// Divide la cantidad de notas, por el tamaï¿½o actual del arreglo mi_lista
 			Prom= cant/mi_lista.size();
 		// retorna el valor prom
 		return Prom;
@@ -59,7 +77,7 @@ public class Ejercicios {
 	{
 		// define la variable menor como el numero maximo del arreglo Integer
 		int menor = Integer.MAX_VALUE;
-		// crea un ciclo en donde i parte de 0 y es menor que el tamaño actual
+		// crea un ciclo en donde i parte de 0 y es menor que el tamaï¿½o actual
 		// de mi_lista
 		for(int i=0;i<mi_lista.size();i++)
 		{
@@ -74,7 +92,7 @@ public class Ejercicios {
 	//Devuelve la cantidad de veces que existe 'str' (dado) en mi_lista (dado)
 	static int contar(ArrayList<String> mi_lista, String str)
 	{
-		// inicia un contador a 0, y el largo como el tamaño actual de mi_lista
+		// inicia un contador a 0, y el largo como el tamaï¿½o actual de mi_lista
 		int cont=0;
 		int largo = mi_lista.size();
 		// comienza un ciclo en que i sea menor que el largo de la lista
